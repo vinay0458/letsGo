@@ -1,5 +1,5 @@
 cd\
-cd C:\mern-crud
+cd C:\Project-x
 timeout 5
 nodemon server.js
 
