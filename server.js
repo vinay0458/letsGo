@@ -11,10 +11,10 @@ const config = require('./config/dbConnect.js');
 mongoose.Promise = global.Promise;
 
 // Connect to the database
-mongoose.connect(config.dbConnect);
+mongoose.connect(config.db);
 let db = mongoose.connection;
 
-db.on('open', () => {
+db.on('openUri', () => {
   console.log('Connected to the database.');
 });
 
@@ -36,6 +36,7 @@ app.get('/',function(req, res){
 });
 // Initialize routes middleware
 app.use('/api/getMovies', require('./routes/getMovies'));
+app.use('/test', require('./routes/test'));
 
 // Use express's default error handling middleware
 app.use((err, req, res, next) => {

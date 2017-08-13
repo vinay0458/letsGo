@@ -3,29 +3,26 @@ const router = express.Router();
 const mongoose = require('mongoose');
 //const sanitizeName = require('string-capitalize-name');
 
-const movies = require('../models/movies');
+//const movies = require('../models/movies');
+const config = require('../config/dbConnect.js');
+
+// Use Node's default promise instead of Mongoose's promise library
+mongoose.Promise = global.Promise;
+
+// Connect to the database
+mongoose.connect(config.db);
+let db = mongoose.connection;
 
 
 // READ
+
 router.get('/', (req, res) => {
-  // If query string is provided, send that specific movie
-  if (req.query.id) {
-    movies.findById(req.query.id)
-    .then((result) => {
-      res.json(result);
-    })
-    .catch((err) => {
-      res.status(400).json({ success: false, msg: 'No such movie.' });
+  console.log("apiiiiiiii called"); 
+    db.collections('movies', function(err, obj){
+      if (err) return next(err);
+      res.send(obj);
     });
-    return; // Skip the remaining code below
-  }
-
-  // Send them all if no query string is provided
-  movies.find({})
-  .then((result) => {
-    res.json(result);
-  });
-
 });
+
 
 module.exports = router;

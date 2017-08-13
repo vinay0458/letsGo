@@ -1,28 +1,40 @@
 const mongoose = require('mongoose');
 const unique = require('mongoose-unique-validator');
 const validate = require('mongoose-validator');
-const config = require('../config/db');
+const config = require('../config/dbConnect');
 
 // Define the database model
 const moviesSchema = new mongoose.Schema({
-  name: {
+  moviename: {
     type: String,
-    required: [true, 'Name is required.'],
-    validate: nameValidator
+    required: [true, 'moviename is required.'],
+    validate: movienameValidator
   },
-  email: {
+  movieImage: {
     type: String,
-    required: [true, 'Email is required.'],
+    required: [true, 'movieImage is required.'],
     unique: true,
-    validate: emailValidator
+    validate: movieImageValidator
   },
-  age: {
-    type: Number,
-    validate: ageValidator
-  },
-  gender: {
+  language: {
     type: String,
-    validate: genderValidator
+    validate: languageValidator
+  },
+  isBigMovie: {
+    type: Boolean,
+    validate: isBigMovieValidator
+  },
+  rating: {
+    type: Number,
+    validate: ratingValidator
+  },
+  movieurls: {
+    type: Object,
+    validate: movieurlsValidator
+  },
+  MovieDetails: {
+    type: Object,
+    validate: MovieDetailsValidator
   }
 });
 
