@@ -20,8 +20,8 @@ var moviesSchema = new Schema({
   language:   String,
   isBigMovie: Number,
   rating: Number,
-  movieurls: String,
-  MovieDetails: String
+  movieurls: Schema.Types.Mixed,
+  MovieDetails: Array
 });
 
 var moviesData = mongoose.model('movies', moviesSchema);
