@@ -4,24 +4,36 @@ const mongoose = require('mongoose');
 //const sanitizeName = require('string-capitalize-name');
 
 //const movies = require('../models/movies');
-const config = require('../config/dbConnect.js');
+//const config = require('../config/dbConnect.js');
 
 // Use Node's default promise instead of Mongoose's promise library
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
 
 // Connect to the database
-mongoose.connect(config.db);
+/*mongoose.connect(config.db);
 let db = mongoose.connection;
+*/
+var Schema = mongoose.Schema;
+var moviesSchema = new Schema({
+  moviename:  String,
+  movieImage: String,
+  language:   String,
+  isBigMovie: Number,
+  rating: Number,
+  movieurls: String,
+  MovieDetails: String
+});
 
+var moviesData = mongoose.model('movies', moviesSchema);
 
 // READ
 
 router.get('/', (req, res) => {
   console.log("apiiiiiiii called"); 
-    db.collections('movies', function(err, obj){
-      if (err) return next(err);
-      res.send(obj);
-    });
+  moviesData.find(function(err,data){
+  	console.log('data'+data);
+  	res.send(data);
+  });
 });
 
 
