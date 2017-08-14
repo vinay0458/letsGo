@@ -15,6 +15,7 @@ let db = mongoose.connection;
 */
 var Schema = mongoose.Schema;
 var moviesSchema = new Schema({
+  _id: Schema.Types.ObjectId,
   moviename:  String,
   movieImage: String,
   language:   String,
@@ -35,6 +36,18 @@ router.get('/', (req, res) => {
   	res.send(data);
   });
 });
+router.get('/:_id', (req, res) => {
+  console.log("apiiiiiiii called id");
+  var query = {"_id": req.params._id};
+  console.log('query'+query);
+  moviesData.find(query, function(err,data){
+  	if(err){
+  		console.log('Query error'+err);
+  	}
+  	console.log('data'+data);
 
+  	res.send(data);
+  });
+});
 
 module.exports = router;
