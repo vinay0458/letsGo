@@ -1,33 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-//const sanitizeName = require('string-capitalize-name');
 
-//const movies = require('../models/movies');
-//const config = require('../config/dbConnect.js');
-
-// Use Node's default promise instead of Mongoose's promise library
-//mongoose.Promise = global.Promise;
-
-// Connect to the database
-/*mongoose.connect(config.db);
-let db = mongoose.connection;
-*/
-/*var Schema = mongoose.Schema;
-var moviesSchema = new Schema({
-  _id: Schema.Types.ObjectId,
-  moviename:  String,
-  movieImage: String,
-  language:   String,
-  isBigMovie: Number,
-  rating: Number,
-  movieurls: Schema.Types.Mixed,
-  MovieDetails: Array
-});
-
-var moviesData = mongoose.model('movies', moviesSchema);*/
-//const moviesData = module.exports = mongoose.model('movies', moviesSchema);
 const moviesData = require('../models/movies');
+
 // READ
 
 router.get('/', (req, res) => {

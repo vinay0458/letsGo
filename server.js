@@ -40,21 +40,11 @@ db.once ('open', function() {
 app.get('/',function(req, res){
   res.send('Hello Babloo!');
 });
-/*app.get('/api/getMovies',function(req, res){
-	console.log('testing');
-  var db = req.db;
-    var collection = db.get('movies');
-    collection.find({},{},function(e,docs){
-        res.json(docs);
-    });
-});*/
-// Initialize routes middleware
-app.use('/api/getMovies', require('./routes/getMovies'));
 /*app.post('/api/addMovie',function(req, res){
   res.send('Hello Babloossss!');
 });*/
+app.use('/api/getMovies', require('./routes/getMovies'));
 app.use('/api/addMovie', require('./routes/addMovie'));
-//app.use('/test', require('./routes/test'));
 
 // Use express's default error handling middleware
 app.use((err, req, res, next) => {
