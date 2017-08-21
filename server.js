@@ -45,6 +45,7 @@ app.get('/',function(req, res){
 });*/
 app.use('/api/getMovies', require('./routes/getMovies'));
 app.use('/api/addMovie', require('./routes/addMovie'));
+app.use('/api/deleteMovieRecord', require('./routes/deleteMovieRecord'));
 
 // Use express's default error handling middleware
 app.use((err, req, res, next) => {
