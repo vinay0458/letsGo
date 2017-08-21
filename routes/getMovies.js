@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 /*mongoose.connect(config.db);
 let db = mongoose.connection;
 */
-var Schema = mongoose.Schema;
+/*var Schema = mongoose.Schema;
 var moviesSchema = new Schema({
   _id: Schema.Types.ObjectId,
   moviename:  String,
@@ -25,8 +25,9 @@ var moviesSchema = new Schema({
   MovieDetails: Array
 });
 
-var moviesData = mongoose.model('movies', moviesSchema);
-
+var moviesData = mongoose.model('movies', moviesSchema);*/
+//const moviesData = module.exports = mongoose.model('movies', moviesSchema);
+const moviesData = require('../models/movies');
 // READ
 
 router.get('/', (req, res) => {

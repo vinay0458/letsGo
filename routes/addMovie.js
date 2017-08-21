@@ -14,7 +14,7 @@ const bodyParser = require('body-parser');
 /*mongoose.connect(config.db);
 let db = mongoose.connection;
 */
-var Schema = mongoose.Schema;
+/*var Schema = mongoose.Schema;
 var moviesSchema = new Schema({
   moviename:  String,
   movieImage: String,
@@ -25,7 +25,8 @@ var moviesSchema = new Schema({
   MovieDetails: Array
 });
 
-var addMovieData = mongoose.model('addMovie', moviesSchema);
+var addMovieData = mongoose.model('addMovie', moviesSchema);*/
+const addMovieData = require('../models/movies');
 const app = express();
 app.use(bodyParser.json());
 // READ

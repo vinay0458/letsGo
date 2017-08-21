@@ -25,7 +25,6 @@ app.listen(port, (err) => {
 
 //DB connection
 const config = require('./config/dbConnect.js');
-
 // Use Node's default promise instead of Mongoose's promise library
 //mongoose.Promise = global.Promise;
 
