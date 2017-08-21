@@ -17,10 +17,15 @@ router.post('/', (req, res, next) => {
   postMovieRecord.save(function (err, postMovieRecord) {
     console.log("data saving--------------------------------->.........");
     if(err){
-      console.log('post error'+err);
-      res.send("error in data saving, Try again!");
+      console.log('post error'+err.message);
+      res.send({
+        "payload": {
+          "errors":JSON.stringify(err)
+        }
+      });
+    } else {
+      res.send("Movie saved successfully");
     }
-    res.send("Movie saved successfully");
   });
 });
 
