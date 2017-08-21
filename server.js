@@ -51,6 +51,10 @@ app.get('/',function(req, res){
 });*/
 // Initialize routes middleware
 app.use('/api/getMovies', require('./routes/getMovies'));
+/*app.post('/api/addMovie',function(req, res){
+  res.send('Hello Babloossss!');
+});*/
+app.use('/api/addMovie', require('./routes/addMovie'));
 //app.use('/test', require('./routes/test'));
 
 // Use express's default error handling middleware
