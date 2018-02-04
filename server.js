@@ -40,12 +40,9 @@ db.once ('open', function() {
 app.get('/',function(req, res){
   res.send('Hello Babloo!');
 });
-/*app.post('/api/addMovie',function(req, res){
-  res.send('Hello Babloossss!');
-});*/
-app.use('/api/getMovies', require('./routes/getMovies'));
-app.use('/api/addMovie', require('./routes/addMovie'));
-app.use('/api/deleteMovieRecord', require('./routes/deleteMovieRecord'));
+
+//app.use('/api/getMovies', require('./routes/getMovies'));
+app.use('/api/signup', require('./routes/signup'));
 
 // Use express's default error handling middleware
 app.use((err, req, res, next) => {

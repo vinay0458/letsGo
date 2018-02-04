@@ -1,5 +1,5 @@
 cd\
-cd C:\Program Files\MongoDB\Server\3.4\bin
+cd C:\Program Files\MongoDB\Server\3.6\bin
 timeout 10
-call "cmd /c start C:\Project-x\nodemonServer.bat"
+call "cmd /c start C:\projects\x\letsGo\nodemonServer.bat"
 mongo

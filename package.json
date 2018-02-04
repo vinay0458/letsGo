@@ -1,0 +1,28 @@
+{
+  "name": "letsgo",
+  "version": "1.0.0",
+  "description": "project-x",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.3",
+    "mongoose-unique-validator": "^2.0.0",
+    "mongoose-validator": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinay0458/Project-x.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinay0458/Project-x/issues"
+  },
+  "homepage": "https://github.com/vinay0458/Project-x#readme"
+}
